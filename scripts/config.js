@@ -34,6 +34,9 @@ const resolve = p => {
   }
 }
 
+/* 不同平台支持的构建入口路径
+**************************/
+
 const builds = {
   // Runtime only (CommonJS). Used by bundlers e.g. Webpack & Browserify
   'web-runtime-cjs': {
@@ -205,6 +208,7 @@ function genConfig (name) {
   return config
 }
 
+// 判断环境变量
 if (process.env.TARGET) {
   module.exports = genConfig(process.env.TARGET)
 } else {
